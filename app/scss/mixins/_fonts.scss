@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'OpenSans-Semibold';
+  src: local('Open Sans Semibold'),
+  local('OpenSans-Semibold'),
+  url('http://lovado.su/prod/fonts/opensans/OpenSans-Semibold.woff2') format('woff2'),
+  url('http://lovado.su/prod/fonts/opensans/OpenSans-Semibold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: local('Open Sans'),
+  local('OpenSans'),
+  url('http://lovado.su/prod/fonts/opensans/OpenSans-Regular.woff2') format('woff2'),
+  url('http://lovado.su/prod/fonts/opensans/OpenSans-Regular.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@mixin openSansR() {
+  font-family: "OpenSans-Regular";
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin openSansS() {
+  font-family: "OpenSans-Semibold";
+  font-weight: normal;
+  font-style: normal;
+}

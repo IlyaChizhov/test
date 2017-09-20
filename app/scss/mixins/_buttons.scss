@@ -1,0 +1,103 @@
+@mixin btn() {
+  @include RobotoM;
+  font-size: 11px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  background-image: none;
+  background-color: transparent;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  user-select: none;
+  text-decoration: none;
+  position: relative;
+  top: 0;
+  transition: $transition;
+
+  line-height: normal;
+  cursor: pointer !important;
+  @media (min-width: 768px)
+  {
+    font-size:12px;
+  }
+}
+
+
+@mixin invisible() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@mixin btn-size($size) {
+  padding: 9px 20px;
+  @if $size == 'big' {
+    font-size: 12px;
+    padding: 10px 20px;
+    line-height: 15px;
+    letter-spacing: 1px;
+    @include for-tablet-portrait-up {
+      padding: 17px 60px;
+    }
+    @include for-desktop-up {
+      font-size: 16px;
+      padding: 19px 62px;
+      line-height: 20px;
+    }
+  }
+}
+
+@mixin btn-background($color, $hovercolor: #fff) {
+      width: 100%;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      //@include transition;
+      //@include RobotoM;
+  color: #fff;
+  border: 2px solid $color;
+  background-color: $color;
+  &:hover {
+    color: $color;
+    background: transparent;
+  }
+  @at-root .invert & {
+    background-color: #fff;
+    color: $color;
+    &:hover {
+      border-color: $hovercolor;
+      background-color: transparent;
+      color: $hovercolor;
+    }
+  }
+}
+
+@mixin btn-border($color, $hovercolor: #fff) {
+  text-transform: uppercase;
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  @include transition;
+  border: 1px solid $color;
+  color: $color !important;
+  @include RobotoM;
+  &:hover {
+    color: #fff !important;
+    background-color: $color;
+  }
+  @at-root .invert & {
+    background-color: #fff;
+    color: $color;
+    &:hover {
+      border-color: $hovercolor;
+      background-color: transparent;
+      color: $hovercolor;
+    }
+  }
+}
